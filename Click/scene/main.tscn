@@ -18,5 +18,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 script/script = ExtResource( 1 )
+vertex_count = 32
+radius = 10
 
 
