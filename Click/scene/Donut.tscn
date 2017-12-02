@@ -2,9 +2,7 @@
 
 [ext_resource path="res://Click/script/Donut.gd" type="Script" id=1]
 
-[node name="root" type="Node2D"]
-
-[node name="Donut" type="Node2D" parent="."]
+[node name="Donut" type="Node2D"]
 
 script/script = ExtResource( 1 )
 vertex_count = 32

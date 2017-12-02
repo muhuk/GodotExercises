@@ -16,9 +16,8 @@ var colors
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
-	outer_vertices = calculate_circle_vertices(vertex_count, outer_radius)
-	inner_vertices = calculate_circle_vertices(vertex_count, inner_radius)
-	set_color(color)
+	set_process(true)
+	_process(0)
 	pass
 
 
@@ -28,6 +27,14 @@ func _draw():
 	for i in range(vertex_count):
 		var j = (i + 1) % vertex_count
 		self.draw_primitive(Vector2Array([outer_vertices[i], outer_vertices[j], inner_vertices[j], inner_vertices[i]]), colors, UV)
+	pass
+
+
+func _process(delta):
+	outer_vertices = calculate_circle_vertices(vertex_count, outer_radius)
+	inner_vertices = calculate_circle_vertices(vertex_count, inner_radius)
+	set_color(color)
+	update()
 	pass
 
 
